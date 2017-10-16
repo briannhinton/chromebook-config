@@ -6,12 +6,12 @@ apt remove wget
 apt install -y wget git coreutils nodejs golang zsh ruby make
 clear
 
-echo wget git coreutils nodejs golang zsh ruby and make installed successfully!
+echo "wget git coreutils nodejs golang zsh ruby and make installed successfully!"
 
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
-echo Go path successful!
+echo "Go path successful!"
 
 
 if [ -d "$HOME/.termux" ]; then
@@ -30,7 +30,7 @@ chsh -s zsh
 # Connect termux to internal storage
 termux-setup-storage
 
-echo Done!
+echo "Done!"
 
 exit
 
