@@ -1,3 +1,5 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
 # Build Hugo
 # Base off of https://scripter.co/installing-bleeding-edge-hugo-goorgeous/ with some modifications.
 
