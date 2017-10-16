@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-pkg uninstally wget
+pkg uninstall wget
 pkg install wget
 pkg install coreutils
 pkg install nodejs
