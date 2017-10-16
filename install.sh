@@ -8,7 +8,7 @@ clear
 
 echo wget git coreutils nodejs golang zsh ruby and make installed successfully!
 
-export GOPATH=$HOME/go;\
+export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
 echo Go path successful!
