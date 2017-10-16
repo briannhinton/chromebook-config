@@ -30,6 +30,11 @@ chsh -s zsh
 # Connect termux to internal storage
 termux-setup-storage
 
+echo "Building Hugo!"
+
+# Get hugo-build and run
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/mrbrianhinton/chromebook-config/master/hugo-build.sh)"
+
 echo "Done!"
 
 exit
