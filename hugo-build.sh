@@ -4,6 +4,9 @@
 # Saves current directory
 here=$(pwd)
 
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+
 go get -u -v github.com/gohugoio/hugo
 
 cd $GOPATH/src/github.com/gohugoio/hugo/
