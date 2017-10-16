@@ -1,54 +1,31 @@
-#!/usr/bin/env bash
+#!/data/data/com.termux/files/usr/bin/bash
 
-pkg uninstall wget
-pkg install wget
-pkg install coreutils
-pkg install nodejs
-pkg install golang
+apt update && apt upgrade
+apt remove wget
 
-here=$(pwd)
+apt install -y wget git coreutils nodejs golang zsh ruby make
+clear
 
-package="github.com/gohugoio/hugo"
+echo wget git coreutils nodejs golang zsh ruby and make installed successfully!
 
-export CGO_ENABLED=0
-export GO_EXTLINK_ENABLED=0
-
-if ! hash govendor 2>/dev/null
-then
-    go get -u -v github.com/kardianos/govendor
+if [ -d "$HOME/.termux" ]; then
+ mv $HOME/.termux $HOME/.termux.bak
 fi
 
-# Install hugo for the first time so that the ${GOPATH}/src/${package}
-# directory gets populated.
-if [[ ! -d "${GOPATH}/src/${package}" ]] || ( ! hash hugo 2>/dev/null )
-then
-    go get -u -v ${package}
-fi
+# Install colors 
+curl -fsLo $HOME/.termux/colors.properties --create-dirs https://raw.githubusercontent.com/mrbrianhinton/chromebook-config/master/.termux/colors.properties
 
-# Update to hugo master branch
-cd "${GOPATH}/src/${package}" || exit
-git fetch --all # fetch new branch names if any
-git checkout master
-# git fetch --all
-# Force update the vendor file in case it got changed
-git reset --hard origin/master
+git clone git://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh --depth 1
+cp $HOME/.oh-my-zsh/templates/zshrc.zsh-template $HOME/.zshrc
 
-# Synchronize all the dependent packages as per the just updated vendor file
-govendor sync
+# Set zsh as default
+chsh -s zsh
 
-# Update the goorgeous package to its master branch
-# You can comment out the below line if you do not need to fetch the
-# latest version of goorgeous.
-govendor fetch github.com/chaseadamsio/goorgeous
-# govendor fetch github.com/chaseadamsio/goorgeous@=fixNewlineParagraphs
+# Connect termux to internal storage
+termux-setup-storage
 
-commithash=$(git rev-parse --short HEAD 2>/dev/null)
-builddate=$(date +%FT%T%z)
-go install -v \
-   -ldflags "-X ${package}/hugolib.CommitHash=${commithash} \
-             -X ${package}/hugolib.BuildDate=${builddate}" \
-   ${package}
+echo Done!
 
-echo "Hugo Version Check:"
+exit
 
-cd "${here}" || exit
+
