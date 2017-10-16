@@ -12,27 +12,32 @@
 
 ## Checklist
 
-### 1. Run install.sh
+### 1. Install requirements
 
 - Open Termux
-- Update Termux enter `apt update && apt upgrade`
-- Setup access to local storage enter `termux-setup-storage`
-- Download install.sh to your computer. Locate the file in Termux
-- Enter `./install.sh` in a Terminal window to run the script
+- Enter ```bash apt install -y curl``` to install curl
 
-Install.sh will install:
+### 2. Installation
+- Enter ` bash -c "$(curl -fsSL https://raw.githubusercontent.com/mrbrianhinton/chromebook-config/master/install.sh)"`
+
+install.sh will install:
 - A better version of wget
-- npm and nodejs
+- npm 
+- nodejs
 - ruby
 - coreutils
+- golang
+- make
 
-Then install.sh will setup, and build the latest version of Hugo.
+Then it will run `termux-storage-setup` to gain access to local storage.
 
-### 2. Prep Terminal
+When install.sh is complete it will prompt you that it is done.
 
-- Copy `.bash-profile` into your `$HOME` directory
-- Copy `.gitconfig` into your `$HOME` directory
-- Copy `.gitignore` into your `$HOME` directory
+TODO: Setup bash-profile, gitconfig, etc. more easily.
+
+### 2. Build and install Hugo
+
+- Enter ` bash -c "$(curl -fsSL https://raw.githubusercontent.com/mrbrianhinton/chromebook-config/master/hugo-build.sh)"`
 
 ## Use it yourself
 
