@@ -27,6 +27,9 @@ cp $HOME/.oh-my-zsh/templates/zshrc.zsh-template $HOME/.zshrc
 # Set zsh as default
 chsh -s zsh
 
+# Add .bash_profile
+curl -fsLo $HOME/.termux/.bash-profile --create-dirs https://raw.githubusercontent.com/mrbrianhinton/chromebook-config/master/.bash_profile
+
 # Connect termux to internal storage
 termux-setup-storage
 
