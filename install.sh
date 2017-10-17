@@ -3,10 +3,10 @@
 apt update && apt upgrade
 apt remove wget
 
-apt install -y wget git coreutils nodejs golang zsh ruby make
+apt install -y wget git coreutils nodejs golang zsh ruby make vim
 clear
 
-echo "wget git coreutils nodejs golang zsh ruby and make installed successfully!"
+echo "wget git coreutils nodejs golang zsh ruby vim and make installed successfully!"
 
 if [ -d "$HOME/.termux" ]; then
  mv $HOME/.termux $HOME/.termux.bak
