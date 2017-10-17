@@ -8,12 +8,6 @@ clear
 
 echo "wget git coreutils nodejs golang zsh ruby and make installed successfully!"
 
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
-
-echo "Go path successful!"
-
-
 if [ -d "$HOME/.termux" ]; then
  mv $HOME/.termux $HOME/.termux.bak
 fi
@@ -29,6 +23,10 @@ chsh -s zsh
 
 # Add .bash_profile
 curl -fsLo $HOME/.termux/.bash-profile --create-dirs https://raw.githubusercontent.com/mrbrianhinton/chromebook-config/master/.bash_profile
+
+echo "Profile copied!"
+
+# TODO : Add other important .dotfiles
 
 # Connect termux to internal storage
 termux-setup-storage
