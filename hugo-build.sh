@@ -6,6 +6,7 @@
 # Saves current directory
 here=$(pwd)
 
+# Path data added to make sure install occurs properly. Path information has been added in .bash_profile
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
