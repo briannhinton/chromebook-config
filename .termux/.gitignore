@@ -90,7 +90,17 @@ vendor/bundle
 *.swp
 *.vi
 *.zip
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.tar
 
-
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
 
 
