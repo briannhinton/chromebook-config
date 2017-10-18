@@ -1,13 +1,19 @@
-# Termux Config
-#### Chrome OS
+# Chromux
+#### Chromebook Termux Setup
 
-**Termux Config** is my checklist I follow to set up a new Chromebook's development environment. It gets me up to speed with Git, Node, Ruby, and more so I can more quickly get back to work.
+**Chromux** is my opinionated setup for a Chromebook development environment. It gets me up to speed with Git, Node, Ruby, and more so I can more quickly get to work. The nice thing about Termux compared to many other platforms is if you mess something up...it's a quick 10 minute reinstall to reconfigure everything. Chromux includes oh-my-zsh integration as well.
 
 ## Contents
+
+TBD
+
+TODO: Add additional .dot-files
 
 | File | Description |
 | --- | --- |
 | `.gitconfig` | Global Git configuration to specify my name and email, shortcuts, colors, and more. |
+| `.bash_profile` | Global bash configuration with paths correctly set, bash prompt configurations, and more. |
+| `.aliases` | Global aliases configuration with quick access to defined functions, and actions. |
 | `.gitignore` | The ignore file from [twbs/bootstrap](https://github.com/twbs/bootstrap) that I use everywhere. |
 
 ## Checklist
@@ -15,7 +21,7 @@
 ### 1. Install requirements
 
 - Open Termux
-- Enter ```bash apt install -y curl``` to install curl
+- Enter ```pkg install curl``` to install curl
 
 ### 2. Installation
 - Enter ` bash -c "$(curl -fsSL https://raw.githubusercontent.com/mrbrianhinton/chromebook-config/master/install.sh)"`
@@ -37,7 +43,7 @@ TODO: Setup bash-profile, gitconfig, etc. more easily.
 
 ### 2. Build and install Hugo
 
-- Enter ` bash -c "$(curl -fsSL https://raw.githubusercontent.com/mrbrianhinton/chromebook-config/master/hugo-build.sh)"`
+- Enter `bash -c "$(curl -fsSL https://raw.githubusercontent.com/mrbrianhinton/chromebook-config/master/hugo-build.sh)"`
 
 ## Use it yourself
 
