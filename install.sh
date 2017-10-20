@@ -22,7 +22,7 @@ cp $HOME/.oh-my-zsh/templates/zshrc.zsh-template $HOME/.zshrc
 chsh -s zsh
 
 # Add .bash_profile
-curl "https://raw.githubusercontent.com/mrbrianhinton/chromebook-config/master/.bash_profile" --output "$HOME/.termux/.bash_profile"
+curl "https://raw.githubusercontent.com/mrbrianhinton/chromebook-config/master/.termux/.bash_profile" --output "$HOME/.termux/.bash_profile"
 
 echo "Profile copied!"
 
