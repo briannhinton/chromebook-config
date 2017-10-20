@@ -44,8 +44,6 @@ go install -v \
              -X ${package}/hugolib.BuildDate=${builddate}" \
    ${package}
 
-echo "Hugo Version Check:"
-
 cd "${here}"
 
 echo "Hugo installed!"
