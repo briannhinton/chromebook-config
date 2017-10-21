@@ -39,8 +39,7 @@ ln -s ~/dotfiles/zshrc ~/.zshrc
 ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
 ln -s ~/dotfiles/vimrc ~/.config/nvim/init.vim
 
-# Set zsh as default
-chsh -s zsh
+cd "${here}"
 
 # Check to see if a .termux folder exists. If it does create a back-up
 if [ -d "$HOME/.termux" ]; then
@@ -69,6 +68,9 @@ echo "Building Hugo!"
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/mrbrianhinton/chromebook-config/master/hugo-build.sh)"
 
 echo "Done!"
+
+# Set zsh as default
+chsh -s zsh
 
 exit
 
