@@ -1,12 +1,15 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
+# get current location for later
+here=$(pwd)
+
 apt update && apt upgrade
 apt remove wget
 
-apt install -y wget git coreutils nodejs golang zsh ruby python make vim neo-vim
+apt install -y wget git coreutils nodejs golang zsh gcc ruby python python-dev make vim neo-vim
 clear
 
-echo "wget git coreutils nodejs golang zsh ruby vim neo-vim python and make installed successfully!"
+echo "wget git coreutils nodejs golang zsh gcc ruby vim neo-vim python and make installed successfully!"
 
 # make a new dotfiles directory
 mkdir ~/dotfiles 
@@ -23,7 +26,7 @@ touch zshrc tmux.conf vimrc
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # Instal 
-pip3 install neovim
+pip install neovim
 
 # Remove created folders
 rm -rf ~/.vim ~/.vimrc ~/.zshrc ~/.tmux ~/.tmux.conf ~/.config/nvim 2> /dev/null
@@ -36,6 +39,9 @@ ln -s ~/dotfiles/zshrc ~/.zshrc
 ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
 ln -s ~/dotfiles/vimrc ~/.config/nvim/init.vim
 
+# Set zsh as default
+chsh -s zsh
+
 # Check to see if a .termux folder exists. If it does create a back-up
 if [ -d "$HOME/.termux" ]; then
  mv $HOME/.termux $HOME/.termux.bak
@@ -47,14 +53,8 @@ curl -fsLo $HOME/.termux/colors.properties --create-dirs https://raw.githubuserc
 # Install font
 curl -fsLo $HOME/.termux/font.ttf --create-dirs https://github.com/tonsky/FiraCode/blob/master/distr/ttf/FiraCode-Retina.ttf
 
-git clone git://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh --depth 1
-cp $HOME/.oh-my-zsh/templates/zshrc.zsh-template $HOME/.zshrc
-
-# Set zsh as default
-chsh -s zsh
-
-# Add .bash_profile
-curl "https://raw.githubusercontent.com/mrbrianhinton/chromebook-config/master/.termux/.bash_profile" --output "$HOME/.bash_profile"
+# Add .bash_profile TODO: Rename
+curl "https://raw.githubusercontent.com/mrbrianhinton/chromebook-config/master/.termux/.bash_profile" --output "$HOME/dotfiles/zshrc"
 
 echo "Profile copied!"
 
