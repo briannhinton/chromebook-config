@@ -4,7 +4,7 @@
 # Base off of https://scripter.co/installing-bleeding-edge-hugo-goorgeous/ with some modifications.
 
 # Saves current directory
-here=$(pwd)
+current=$(pwd)
 
 # Path data added to make sure install occurs properly. Path information has been added in .bash_profile
 # export GOPATH=$HOME/go
@@ -44,6 +44,6 @@ go install -v \
              -X ${package}/hugolib.BuildDate=${builddate}" \
    ${package}
 
-cd "${here}"
+cd "${current}"
 
 echo "Hugo installed!"
