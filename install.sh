@@ -6,7 +6,7 @@ here=$(pwd)
 apt update && apt upgrade
 apt remove wget
 
-pkg install -y wget git coreutils nodejs golang zsh gcc ruby python python-dev make vim neo-vim
+apt install -y wget git coreutils nodejs golang zsh gcc ruby python python-dev make vim neovim
 clear
 
 echo "wget git coreutils nodejs golang zsh gcc ruby vim neo-vim python and make installed successfully!"
