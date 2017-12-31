@@ -4,11 +4,11 @@
 here=$(pwd)
 
 apt update && apt upgrade
-apt remove wget
 
-apt install -y wget git coreutils nodejs zsh ruby python python-dev make tmux vim neovim 
+apt install wget
+apt install git
 
-echo "wget git coreutils nodejs golang zsh gcc ruby vim neo-vim python and make installed successfully!"
+apt install -y coreutils nodejs zsh ruby make tmux vim neovim 
 
 # make a new dotfiles directory
 mkdir ~/dotfiles 
@@ -21,11 +21,6 @@ git init
 
 # creating the config files
 touch zshrc tmux.conf vimrc 
-
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-# Instal 
-pip install neovim
 
 # Remove created folders
 rm -rf ~/.vim ~/.vimrc ~/.zshrc ~/.tmux ~/.tmux.conf ~/.config/nvim 2> /dev/null
@@ -56,17 +51,8 @@ curl "https://raw.githubusercontent.com/mrbrianhinton/chromebook-config/master/.
 
 echo "Profile copied!"
 
-# TODO : Add other important .dotfiles
-
 # Connect termux to internal storage
 termux-setup-storage
-
-echo "Building Hugo!"
-
-# Get hugo-build and run
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/mrbrianhinton/chromebook-config/master/hugo-build.sh)"
-
-echo "Done!"
 
 # Set zsh as default
 chsh -s zsh
