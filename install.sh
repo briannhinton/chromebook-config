@@ -9,16 +9,12 @@ mkdir ~/dotfiles
 cd ~/dotfiles # enter the new dotfiles directory
 git init
 
-apt install -y coreutils nodejs zsh ruby make tmux vim neovim 
+# install all the core tools that you need
+apt install -y coreutils make clang nodejs zsh ruby ruby-dev tmux vim python python-dev neovim libsqlite-dev libxslt-dev pkg-config
 
-# make a new dotfiles directory
-mkdir ~/dotfiles 
-
-# enter the new dotfiles directory
-cd ~/dotfiles 
-
-# ready the directory for git version control
-git init 
+# install rails
+gem install nokogiri -- --use-system-libraries
+gem install rails
 
 # creating the config files
 touch zshrc tmux.conf vimrc 
