@@ -1,12 +1,13 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
-# get current location for later
-here=$(pwd)
-
 apt update && apt upgrade
 
 apt install wget
 apt install git
+
+mkdir ~/dotfiles
+cd ~/dotfiles # enter the new dotfiles directory
+git init
 
 apt install -y coreutils nodejs zsh ruby make tmux vim neovim 
 
