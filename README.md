@@ -1,6 +1,6 @@
 # Chromux
 
-**Chromux** is my opinionated setup for a Chromebook development environment. It gets me up to speed with Git, Node, Ruby, and more so I can more quickly get to work. The nice thing about Termux compared to many other platforms is if you mess something up...it's a quick 10 minute reinstall to reconfigure everything. Chromux includes oh-my-zsh integration as well.
+**Chromux** is my setup for a Chromebook development environment. It gets me up to speed with Git, Node, Ruby, and more so I can more quickly get to work. The nice thing about Termux compared to many other platforms is if you mess something up...it's a quick 10 minute reinstall to reconfigure everything. Chromux includes oh-my-zsh integration as well.
 
 ## Contents
 
