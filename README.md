@@ -4,10 +4,6 @@
 
 ## Contents
 
-TBD
-
-TODO: Add additional .dot-files
-
 | File | Description |
 | --- | --- |
 | `.gitconfig` | Global Git configuration to specify my name and email, shortcuts, colors, and more. |
