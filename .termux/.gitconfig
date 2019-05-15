@@ -1,6 +1,6 @@
 [user]
 	name = Brian Hinton
-	email = briannhinton@gmail.com
+	email = brian@mailinator.com
 [core]
 	editor = vim
 	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
